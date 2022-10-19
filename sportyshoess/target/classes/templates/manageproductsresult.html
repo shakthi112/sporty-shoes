@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang=en xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Manage products results</title>
+</head>
+<body>
+	<div th:if="${errorMsg != null}">
+		<span style="color: red;" th:text="${errorMsg}"></span>
+	</div>
+	<div th:if="${successMsg != null}">
+		<span style="color: red;" th:text="${successMsg}"></span>
+	</div>
+</body>
+</html>

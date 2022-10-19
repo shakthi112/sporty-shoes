@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang=en xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search users results</title>
+<style>
+table, td, th {
+	border: 2px solid blue;
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+	<h3 style="color:blue;font-family: Arial, Helvetica, sans-serif;">Sporty shoes - Search user results</h3><br/>
+	<div th:if="${noUserFound != null}">
+	   <span style="color:red;" th:text="${noUserFound}"></span>
+	</div>
+	<div th:if="${usersList != null}">
+	<span style="color:blue;">User search successful. Please find the details below: </span> <br/>
+	<br/>
+	<table>
+		<tr>
+			<th>User Id</th>
+			<th>First name</th>
+			<th>Last name</th>
+		</tr>
+
+		<tr th:each="data :${usersList}">
+			<td><span th:text="${data.userid}"> </span></td>
+			<td><span th:text="${data.fname}"> </span></td>
+			<td><span th:text="${data.lname}"> </span></td>
+		</tr>
+	</table>
+	</div>
+</body>
+</html>

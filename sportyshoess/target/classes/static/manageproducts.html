@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style all input fields */
+input {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* Style the submit button */
+input[type=button] {
+	background-color: #0428aa;
+	color: white;
+	width: 100%;
+}
+
+input[type=submit] {
+	background-color: #0428aa;
+	color: white;
+	width: 100%;
+}
+/* Style the container for inputs */
+.container {
+	background-color: #f1f1f1;
+	padding: 20px;
+	width: 40%;
+}
+/* The message box is shown when the user clicks on the password field */
+#message {
+	display: none;
+	background: #0428aa;
+	color: #000;
+	position: relative;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+#message p {
+	padding: 10px 35px;
+	font-size: 18px;
+}
+</style>
+</head>
+<title>Manage products</title>
+<body>
+	<h3 style="color:blue;font-family: Arial, Helvetica, sans-serif;">Sporty Shoes - Manage products console</h3><br/>
+	<h3>Add product:</h3>
+	<div class="container">
+		<form action="/addproduct" method="post">	
+			<label>Product name:</label><br /><input type="text" id="productName" name="productName" required><br />
+			<label>Brand:</label><br /><input type="text" id="brand" name="brand" required><br />
+			<label>Price:</label><br /><input type="number" id="price" name="price" required><br />
+			<input type="submit" value="Add product" id="addProductButton">
+		</form>
+	</div>
+	<h3>Update product:</h3>
+	<div class="container">
+		<form action="/updateproduct" method="post">	
+			<label>Product Id:</label><br /><input type="text" id="productIdUpdated" name="productIdUpdated" required><br />
+			<label>Product name:</label><br /><input type="text" id="productNameUpdated" name="productNameUpdated"><br />
+			<label>Brand:</label><br /><input type="text" id="brandUpdated" name="brandUpdated"><br />
+			<label>Price:</label><br /><input type="number" id="priceUpdated" name="priceUpdated"><br />
+			<input type="submit" value="Update product" id="updateProductButton">
+		</form>
+	</div>
+	<h3>Delete product:</h3>
+	<h6>Note: You cannot delete a product for which a purchase is already made.</h6>
+	<div class="container">
+		<form action="/deleteproduct" method="post">	
+			<label>Product Id:</label><br /><input type="text" id="productIdDeleted" name="productIdDeleted" required><br />
+			<input type="submit" value="Delete product" id="deleteProductButton">
+		</form>
+	</div>
+</body>
+</html>

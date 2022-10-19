@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style all input fields */
+input {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* Style the submit button */
+input[type=button] {
+	background-color: #0428aa;
+	color: white;
+	width: 100%;
+}
+
+input[type=submit] {
+	background-color: #0428aa;
+	color: white;
+	width: 100%;
+}
+/* Style the container for inputs */
+.container {
+	background-color: #f1f1f1;
+	padding: 20px;
+	width: 40%;
+}
+/* The message box is shown when the user clicks on the password field */
+#message {
+	display: none;
+	background: #04AA6D;
+	color: #000;
+	position: relative;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+#message p {
+	padding: 10px 35px;
+	font-size: 18px;
+}
+</style>
+</head>
+<title>Sporty Shoes Admin</title>
+<body>
+<h3 style="color:blue;font-family: Arial, Helvetica, sans-serif;">Welcome to Sporty Shoes admin console</h3><br/>
+	<br />
+	<div class="container">
+		<form action="">
+			<input type="button" value="Change password"
+				id="changePasswordButton">
+		</form>
+	</div>
+	<h3>Choose from below options:</h3>
+	<div class="container">
+		<form method="post">
+			<input type="button" value="Manage products" id="manageProductsButton"> 
+			<input type="submit" value="Browse users" onclick="form.action='/browseusers'"> 
+			<input type="button" value="Search users" id="searchUsersButton">
+			<input type="submit" value="See purchase reports" onclick="form.action='/viewpurchasereports'"> 
+		</form>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("changePasswordButton").onclick = function() {
+			location.href = "http://localhost:8090/changepwd.html";
+		};
+		document.getElementById("manageProductsButton").onclick = function() {
+			location.href = "http://localhost:8090/manageproducts.html";
+		};
+		document.getElementById("searchUsersButton").onclick = function() {
+			location.href = "http://localhost:8090/searchusers.html";
+		};
+	</script>
+</body>
+</html>
